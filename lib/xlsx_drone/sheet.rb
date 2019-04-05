@@ -16,6 +16,7 @@ module XLSXDrone
       @native_sheet[:last_row]
     end
 
+    # @return [String]
     def name
       @native_sheet[:name].read_string
     end
