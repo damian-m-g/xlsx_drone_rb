@@ -7,4 +7,6 @@ test/benchmark/*.xlsx
 !test/benchmark/xlsx_200000_rows.xlsx
 .yardoc/
 coverage/
+!coverage/index.html
+!coverage/README
 doc/

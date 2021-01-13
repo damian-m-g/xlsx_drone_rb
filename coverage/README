@@ -1,0 +1,1 @@
+As of version 0.3.0, code coverage results after running the test suite are manually calculated based on index.html taking into account only files inside lib (lib/**/*.rb), which is giving currently 91.79%. On next version I'll provide an automated way to produce thy result.
