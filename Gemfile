@@ -7,6 +7,14 @@ group :development do
   gem 'bundler'
   gem 'yard'
   gem 'test-unit'
+  gem 'simplecov'
+end
+
+group :test do
+  gem 'roo'
+  gem 'creek'
+  gem 'rubyXL'
+  gem 'simple_xlsx_reader'
 end
 
 group :production do

@@ -9,6 +9,9 @@ module XLSXDrone
 
     # May happen on xlsx_load_sheet().
     class NonExistent < RuntimeError; end
+    
+    # May happen when try to interact with a workbook already closed.
+    class WorkbookClosed < RuntimeError; end
   end
 
   # Errors caused by the system itself.

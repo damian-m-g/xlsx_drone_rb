@@ -7,8 +7,8 @@ class TCWorkbook < Test::Unit::TestCase
   end
 
   def test_load_sheet
-    assert_nil(@workbook.load_sheet(2.5), "Should do nothing if you don't pass a #String or an #Integer.")
-    assert_nil(@workbook.load_sheet(nil), "Should do nothing if you don't pass a #String or an #Integer.")
+    assert_raise(XLSXDrone::LogicError::ClientError::MalformedParams) {@workbook.load_sheet(2.5)}
+    assert_raise(XLSXDrone::LogicError::ClientError::MalformedParams) {@workbook.load_sheet(nil)}
     # you can load a sheet by its index, that starts with 1, or by its name
     assert_instance_of(XLSXDrone::Sheet, @workbook.load_sheet(1))
     assert_instance_of(XLSXDrone::Sheet, @workbook.load_sheet("Sheet1"))

@@ -3,3 +3,8 @@ Gemfile.lock
 ProgrammerNotes.md
 *.gem
 releases/
+test/benchmark/*.xlsx
+!test/benchmark/xlsx_200000_rows.xlsx
+.yardoc/
+coverage/
+doc/

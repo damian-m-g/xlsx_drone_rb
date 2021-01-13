@@ -126,6 +126,9 @@ class TCSheet < Test::Unit::TestCase
     # column "J", Text
     assert_equal("1875", @sheet.read_cell(2, "J"))
     assert_equal("Just text", @sheet.read_cell(3, "J"))
+    # unicode text
+    assert_equal("foo你bar好qaz", @sheet.read_cell(5, "J"))
+    assert_equal("𐐀34", @sheet.read_cell(4, "J"))
 
     # column "K", Special
     assert_equal(2000, @sheet.read_cell(2, "K"))
@@ -136,6 +139,10 @@ class TCSheet < Test::Unit::TestCase
     # column "L", Custom
     assert_equal(12, @sheet.read_cell(2, "L"))
     assert_equal(Time.new(2012, 2, 16), @sheet.read_cell(3, "L"))
+    
+    # empty cells
+    assert_equal(nil, @sheet.read_cell(13, "D"))
+    assert_equal(nil, @sheet.read_cell(50, "A"))
   end
 
   def teardown
