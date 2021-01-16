@@ -3,7 +3,7 @@ module XLSXDrone
 
   # XLSX Sheet.
   class Sheet
-
+    
     # @return [XLSXDrone::Sheet]
     def initialize(xlsx_sheet_mpointer)
       @native_sheet = XLSXDrone::NativeBinding::XLSXSheetT.new(xlsx_sheet_mpointer)
@@ -16,6 +16,26 @@ module XLSXDrone
       @native_sheet[:last_row]
     end
 
+    # @return [String] "A" if the sheet is empty
+    def last_column
+      if(!@last_column)
+        mpointer = XLSXDrone::NativeBinding.xlsx_get_last_column(@native_sheet) # NULL or a string
+        if(mpointer.null?)
+          # the sheet is empty
+          @last_column = 'A'
+        else
+          @last_column = mpointer.get_string(0).force_encoding(Encoding::UTF_8)
+        end
+      else
+        @last_column
+      end
+    end
+
+    # @return [Boolean]
+    def empty?
+      last_row() == 0 ? true : false
+    end
+    
     # @return [String]
     def name
       @native_sheet[:name].get_string(0).force_encoding(Encoding::UTF_8)

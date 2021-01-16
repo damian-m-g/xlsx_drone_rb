@@ -1,10 +1,10 @@
 .idea/
-Gemfile.lock
-ProgrammerNotes.md
-*.gem
-releases/
-test/benchmark/*.xlsx
-!test/benchmark/xlsx_200000_rows.xlsx
 .yardoc/
 coverage/
 doc/
+releases/
+test/benchmark/*.xlsx
+!test/benchmark/xlsx_200000_rows.xlsx
+Gemfile.lock
+ProgrammerNotes.md
+*.gem

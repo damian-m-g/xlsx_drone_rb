@@ -13,6 +13,7 @@ Fast _Microsoft Excel's_ **\*.xlsx** reader. Binding of [C's xlsx_drone](https:/
 * [Usage](#usage)
 * [API](#api)  
 * [TODO](#todo)
+* [News](#news)  
 * [License](#license)
 
 ## Summary
@@ -47,8 +48,9 @@ sheet = wb.load_sheet(1) #: XLSXDrone::Sheet
 puts "Sheet #1 name: #{sheet.name}"
 
 1.upto(sheet.last_row) do |row|
-  p sheet.read_cell(row, 'A')
-  p sheet.read_cell(row, 'B')
+  'A'.upto(sheet.last_column) do |column|
+    p sheet.read_cell(row, column)
+  end
 end
 ```
 
@@ -66,6 +68,12 @@ Also, consider that this TODO list is somehow concatenated to the [C's xlsx_dron
 - Consider making `XLSXDrone::Workbook#load_sheet()` to keep a reference to the loaded sheet as an accessible instance variable (i.e.: @loaded_sheets).
 
 **Be free to [make (or upvote)](https://github.com/damian-m-g/xlsx_drone_rb/issues) any feature request.**
+
+## News
+
+Version 0.4.0 introduces:
+* `Sheet#last_column`
+* `Sheet#empty?`
 
 ## License
 

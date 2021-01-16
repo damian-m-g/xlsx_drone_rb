@@ -6,6 +6,13 @@ Removed, Fixed, Security, and others; and this project adheres to [Semantic Vers
 
 ## [Unreleased]
 
+## [0.4.0] - 2021-01-16
+### Added
+- Method Sheet#last_column().
+- Method Sheet#empty?().
+- Several test assertions for new functionality.
+- Using new xlsx_drone version (0.2.0).
+
 ## [0.3.0] - 2021-01-12
 ### Added
 - A benchmark comparison against other xlsx reading libraries.

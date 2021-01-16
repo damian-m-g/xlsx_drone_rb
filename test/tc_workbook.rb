@@ -1,6 +1,6 @@
 class TCWorkbook < Test::Unit::TestCase
 
-  XLSX_PATH = "#{File.dirname(__FILE__)}/helper/foo.xlsx"
+  XLSX_PATH = "#{File.dirname(__FILE__)}/helper/sample.xlsx"
 
   def setup
     @workbook = XLSXDrone.open(XLSX_PATH)
