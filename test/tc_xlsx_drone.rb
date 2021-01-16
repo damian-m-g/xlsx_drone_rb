@@ -1,6 +1,6 @@
 class TCXLSXDrone < Test::Unit::TestCase
 
-  XLSX_PATH = "#{File.dirname(__FILE__)}/helper/foo.xlsx"
+  XLSX_PATH = "#{File.dirname(__FILE__)}/helper/sample.xlsx"
 
   def test_open
     assert_raise(XLSXDrone::LogicError::ClientError::MalformedParams) {XLSXDrone.open(123)}

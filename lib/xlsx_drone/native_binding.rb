@@ -42,6 +42,7 @@ module XLSXDrone
         :sheet_xml, :pointer,
         :sheetdata, :pointer,
         :last_row, :int,
+        :last_column, :pointer,
         :last_row_looked, XLSXReferenceToRowT
     end
     
@@ -70,6 +71,7 @@ module XLSXDrone
     attach_function :xlsx_set_print_err_messages, [:int], :void
     attach_function :xlsx_open, [:string, :pointer], :int
     attach_function :xlsx_load_sheet, [:pointer, :int, :string], :pointer
+    attach_function :xlsx_get_last_column, [:pointer], :pointer
     attach_function :xlsx_read_cell, [:pointer, :uint, :string, :pointer], :void
     attach_function :xlsx_close, [:pointer], :int
   end
