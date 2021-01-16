@@ -1,58 +1,20 @@
 class TCSheet < Test::Unit::TestCase
 
-  TEST_FOLDER_ABSOLUTE_PATH = File.dirname(__FILE__)
-  XLSX_PATH = "#{TEST_FOLDER_ABSOLUTE_PATH}/helper/sample.xlsx"
-  EMPTY_XLSX_PATH = "#{TEST_FOLDER_ABSOLUTE_PATH}/helper/empty_sample.xlsx"
+  XLSX_PATH = "#{File.dirname(__FILE__)}/helper/foo.xlsx"
 
   def setup
     @workbook = XLSXDrone.open(XLSX_PATH)
     @sheet = @workbook.load_sheet(1)
   end
 
-  def teardown
-    @workbook.close()
-  end
-  
   def test_last_row
     assert_equal(23, @sheet.last_row)
   end
 
-  def test_last_column
-    assert_equal("L", @sheet.last_column)
-    # if called a second time, must return the same
-    assert_equal("L", @sheet.last_column)
-    
-    # this sheet has its last column filled in "B", but has styles manually defined at the right
-    sheet = @workbook.load_sheet(2)
-    assert_equal("B", sheet.last_column)
-
-    workbook = XLSXDrone.open(EMPTY_XLSX_PATH)
-    sheet = workbook.load_sheet(1)
-    assert_equal("A", sheet.last_column)
-    # second sheet is also empty but has some styles manually defined
-    sheet = workbook.load_sheet(2)
-    assert_equal("A", sheet.last_column)
-
-    workbook.close()
-  end
-  
-  def test_empty?
-    assert_equal(false, @sheet.empty?)
-    
-    workbook = XLSXDrone.open(EMPTY_XLSX_PATH)
-    sheet = workbook.load_sheet(1)
-    assert_equal(true, sheet.empty?)
-    # second sheet is also empty but has some styles manually defined
-    sheet = workbook.load_sheet(2)
-    assert_equal(true, sheet.empty?)
-    
-    workbook.close()
-  end
-  
   def test_name
     assert_equal('Sheet1', @sheet.name)
   end
-  
+
   def test_read_cell
     # headers
     assert_equal("General", @sheet.read_cell(1, "A"))
@@ -181,5 +143,9 @@ class TCSheet < Test::Unit::TestCase
     # empty cells
     assert_equal(nil, @sheet.read_cell(13, "D"))
     assert_equal(nil, @sheet.read_cell(50, "A"))
+  end
+
+  def teardown
+    @workbook.close()
   end
 end
