@@ -46,6 +46,7 @@ sheets_amount = wb.sheets_amount #: Integer
 # you can pass its index (starts with 1) or its name as argument
 sheet = wb.load_sheet(1) #: XLSXDrone::Sheet
 puts "Sheet #1 name: #{sheet.name}"
+puts "Sheet #1 is #{sheet.empty? ? 'empty' : 'not-empty'}"
 
 1.upto(sheet.last_row) do |row|
   'A'.upto(sheet.last_column) do |column|
@@ -53,10 +54,6 @@ puts "Sheet #1 name: #{sheet.name}"
   end
 end
 ```
-
-## API
-
-You can fully produce the documentation with the `rake yard` task, although ~90% of the API (and most useful part) is shown above. 
 
 ## TODO
 
