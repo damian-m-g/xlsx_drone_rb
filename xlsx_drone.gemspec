@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "xlsx_drone"
-  s.version = "0.4.0"
+  s.version = "0.4.1"
   s.summary = "Fast Microsoft Excel's XLSX reader. Binding of C's xlsx_drone lib."
   s.author = "Damián M. González"
   s.homepage = "https://github.com/damian-m-g/xlsx_drone_rb"
