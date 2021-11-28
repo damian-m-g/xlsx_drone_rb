@@ -6,6 +6,10 @@ Removed, Fixed, Security, and others; and this project adheres to [Semantic Vers
 
 ## [Unreleased]
 
+## [0.4.2] - 2021-11-28
+### Fixed
+- xlsx_drone core library (C) was updated from 0.2.2 to 0.2.3 fixing one issue. Mirroring those changes here through updating the dlls.
+
 ## [0.4.1] - 2021-10-21
 ### Fixed
 - xlsx_drone core library (C) was updated from 0.2.0 to 0.2.2 fixing a few problems. Mirroring those changes here through updating the dlls.
