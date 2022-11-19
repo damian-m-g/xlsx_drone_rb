@@ -39,6 +39,8 @@ task :badges do
   generate_test_suite_badge(pass: system('rake test'))
 end
 
+#################FUNCTIONS#######################
+
 # @return [boolean]
 # Should be called after a "run test with coverage" have been performed. Consumes coverage/.last_run.json.
 def generate_coverage_badge

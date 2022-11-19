@@ -11,7 +11,6 @@ Fast _Microsoft Excel's_ **\*.xlsx** reader. Binding of [C's xlsx_drone](https:/
 * [Summary](#summary)
 * [Installation](#installation)
 * [Usage](#usage)
-* [API](#api)  
 * [TODO](#todo)
 * [News](#news)  
 * [License](#license)
