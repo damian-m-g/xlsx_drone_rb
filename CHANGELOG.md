@@ -4,7 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) featuring Added, Changed, Deprecated,
 Removed, Fixed, Security, and others; and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [0.5.0] - 2022-11-19
+### Changed
+- DLLs used, to the ones for [new version 0.3.0 of xlsx_drone C](https://github.com/damian-m-g/xlsx_drone/releases/tag/0.3.0).
 
 ## [0.4.3] - 2022-01-09
 ### Fixed

@@ -1,4 +1,4 @@
-require 'test/unit'
+require 'test-unit'
 
 require_relative '../lib/xlsx_drone'
 
