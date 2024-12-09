@@ -1,5 +1,6 @@
 .idea/
 .yardoc/
+.bundle/
 coverage/
 doc/
 releases/

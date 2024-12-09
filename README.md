@@ -52,6 +52,9 @@ puts "Sheet #1 is #{sheet.empty? ? 'empty' : 'not-empty'}"
     p sheet.read_cell(row, column)
   end
 end
+
+# when done with the wb, but non-mandatory (automatically done on normal exit)
+wb.close
 ```
 
 ## TODO
@@ -67,9 +70,10 @@ Also, consider that this TODO list is somehow concatenated to the [C's xlsx_dron
 
 ## News
 
-Version 0.4.0 introduces:
-* `Sheet#last_column`
-* `Sheet#empty?`
+Version 0.6.0 introduces:
+* Support for Unix-like x64 OS potentially guaranteed.
+* Dependencies updated.
+* Bugfixes.
 
 ## License
 

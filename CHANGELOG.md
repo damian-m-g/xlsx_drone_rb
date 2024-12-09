@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) featuring Added, Changed, Deprecated,
 Removed, Fixed, Security, and others; and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.6.0] - 2024-12-09
+### Changed
+- xlsx_drone core library (C) was updated from 0.3.0 to [0.4.0](https://github.com/damian-m-g/xlsx_drone/releases/tag/0.4.0). Adopting those changes on this version (bugfixes included).
+- Providing more support for x64 non Windows OS (GNU/Linux & Unix like systems) by using the proper shared library.
+
 ## [0.5.0] - 2022-11-19
 ### Changed
 - DLLs used, to the ones for [new version 0.3.0 of xlsx_drone C](https://github.com/damian-m-g/xlsx_drone/releases/tag/0.3.0).

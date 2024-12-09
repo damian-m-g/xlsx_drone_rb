@@ -3,10 +3,11 @@ module XLSXDrone
   
   # All things related to the binding with the native C library.
   module NativeBinding
-    
+
+    PLATFORM_WINDOWS = RUBY_PLATFORM.match(/cygwin|mswin|mingw|bccwin|wince|emx/) ? true : false
     PLATFORM_X64 = RUBY_PLATFORM.match(/64/) ? true : false
     EXT_PATH = "#{File.dirname(File.dirname(File.dirname(__FILE__)))}/ext"
-    DLL_PATH = PLATFORM_X64 ? "#{EXT_PATH}/xlsx_drone_x64.dll" : "#{EXT_PATH}/xlsx_drone_x86.dll"
+    DLL_PATH = PLATFORM_WINDOWS ? (PLATFORM_X64 ? "#{EXT_PATH}/xlsx_drone_x64.dll" : "#{EXT_PATH}/xlsx_drone_x86.dll") : "#{EXT_PATH}/libxlsx_drone_x64.so"
     
     class XLSXWorkbookT < FFI::Struct
       
